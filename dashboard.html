@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Dashboard - AI Crop Yield</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <section class="dashboard-demo">
+    <div class="container">
+      <h1>📊 Demo Analytics Dashboard</h1>
+      <p>This is a sample preview of crop yield insights.</p>
+
+      <div class="chart-card">
+        <canvas id="demoChart"></canvas>
+      </div>
+
+      <a href="index.html" class="btn btn-outline">⬅ Back to Home</a>
+    </div>
+  </section>
+
+  <script>
+    // Demo Chart using Chart.js
+    const ctx = document.getElementById('demoChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Corn', 'Wheat', 'Soybeans'],
+        datasets: [{
+          label: 'Predicted Yield (kg/ha)',
+          data: [12000, 9000, 8000],
+          backgroundColor: ['#22c55e','#f59e0b','#3b82f6']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
