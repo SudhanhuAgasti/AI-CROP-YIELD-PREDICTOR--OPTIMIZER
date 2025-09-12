@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Dashboard</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideUp 0.8s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .value {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .btn {
+      margin-top: 40px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌿 Smart Farming Dashboard 🌿</h1>
+
+  <div class="dashboard">
+    <div class="card">
+      <div class="icon">🌾</div>
+      <div class="value">85%</div>
+      <div class="label">Crop Yield</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌦</div>
+      <div class="value">Sunny 28°C</div>
+      <div class="label">Weather</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌱</div>
+      <div class="value">72%</div>
+      <div class="label">Soil Moisture</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📊</div>
+      <div class="value">Updated</div>
+      <div class="label">Predictions</div>
+    </div>
+  </div>
+
+  <button class="btn" onclick="window.location.href='index.html'">🚪 Logout</button>
+</body>
+</html>

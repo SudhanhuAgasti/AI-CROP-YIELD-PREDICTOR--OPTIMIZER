@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Crop Yield Prediction & Optimization</title>
+    <meta name="description" content="Maximize your harvest with advanced machine learning algorithms that analyze weather patterns, soil conditions, and historical data.">
+     <link rel="icon" type="image/x-icon" href="favicon (4).ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo"><i class="fas fa-seedling"></i> AgriAI</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="login.html" class="btn-login">Login</a>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    z-index: 1000;
+  }
+  .navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #22c55e;
+  }
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  .navbar ul li a:hover {
+    color: #22c55e;
+  }
+  .btn-login {
+    background: #22c55e;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  body {
+    padding-top: 70px; /* taki hero section navbar ke niche se start ho */
+  }
+</style>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">
+                    AI-Powered Crop Yield
+                    <span class="gradient-text">Prediction & Optimization</span>
+                </h1>
+                <p class="hero-description">
+                    Maximize your harvest with advanced machine learning algorithms that analyze 
+                    weather patterns, soil conditions, and historical data to predict optimal 
+                    crop yields and farming strategies.
+                </p>
+                
+<div class="hero-buttons">
+    <button class="btn btn-primary" id="startPredictBtn">Start Predict Yield</button>
+    <button class="btn btn-outline" id="demoBtn">View Demo Dashboard</button>
+    
+
+</div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-chart-bar stat-icon"></i>
+                        <div class="stat-value">95%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trending-up stat-icon"></i>
+                        <div class="stat-value">+28%</div>
+                        <div class="stat-label">Yield Increase</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-cloud-rain stat-icon"></i>
+                        <div class="stat-value">15 Days</div>
+                        <div class="stat-label">Weather Forecast</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-seedling stat-icon"></i>
+                        <div class="stat-value">500K+</div>
+                        <div class="stat-label">Farms Optimized</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real-Time Analytics Dashboard</h2>
+                <p>Monitor your crops, weather conditions, and yield predictions all in one comprehensive dashboard</p>
+            </div>
+            <div class="dashboard-grid">
+                <!-- Weather Widget -->
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-sun"></i> Current Conditions</h3>
+                    <div class="weather-data">
+                        <div class="weather-item">
+                            <span><i class="fas fa-thermometer-half"></i> Temperature</span>
+                            <span>24°C</span>
+                        </div>
+                        <div class="weather-item">
+                            <span><i class="fas fa-tint"></i> Humidity</span>
+                            <span>68%</span>
+                        </div>
+                        <div class="weather-item">
+                            <span><i class="fas fa-wind"></i> Wind Speed</span>
+                            <span>12 km/h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soil Conditions -->
+                <div class="dashboard-card">
+                    <h3>Soil Health</h3>
+                    <div class="soil-data">
+                        <div class="soil-metric">
+                            <div class="metric-header">
+                                <span>Moisture Level</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="soil-metric">
+                            <div class="metric-header">
+                                <span>pH Level</span>
+                                <span>6.8</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="soil-metric">
+                            <div class="metric-header">
+                                <span>Nutrient Index</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop Distribution -->
+                <div class="dashboard-card">
+                    <h3>Crop Distribution</h3>
+                    <div class="crop-chart">
+                        <canvas id="cropChart" width="200" height="200"></canvas>
+                    </div>
+                    <div class="crop-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #22c55e"></div>
+                            <span>Corn (45%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #f59e0b"></div>
+                            <span>Wheat (30%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #3b82f6"></div>
+                            <span>Soybeans (25%)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yield Chart -->
+                <div class="dashboard-card chart-card">
+                    <h3><i class="fas fa-chart-line"></i> Yield Prediction vs Actual</h3>
+                    <div class="chart-container">
+                        <canvas id="yieldChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- Alerts -->
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Smart Alerts</h3>
+                    <div class="alerts-list">
+                        <div class="alert alert-high">
+                            <div class="alert-badge">High Priority</div>
+                            <p>Drought risk detected for Sector 3. Consider irrigation.</p>
+                        </div>
+                        <div class="alert alert-medium">
+                            <div class="alert-badge">Medium Priority</div>
+                            <p>Optimal harvesting window opens in 5 days.</p>
+                        </div>
+                        <div class="alert alert-low">
+                            <div class="alert-badge">Low Priority</div>
+                            <p>Weekly soil analysis report available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Modern Farming</h2>
+                <p>Our comprehensive platform combines cutting-edge AI technology with practical farming insights to help you maximize yields and optimize resources.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Predictions</h3>
+                    <p>Advanced machine learning algorithms analyze multiple data sources to provide accurate yield forecasts with 95% precision.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <h3>Weather Integration</h3>
+                    <p>Real-time weather data and 15-day forecasts help you make informed decisions about planting, irrigation, and harvesting.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p>Comprehensive analytics dashboard with interactive charts, trends, and insights to optimize your farming operations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Smart Automation</h3>
+                    <p>Automated alerts and recommendations for irrigation, fertilization, and pest control based on real-time conditions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Satellite Monitoring</h3>
+                    <p>High-resolution satellite imagery tracks crop health, growth patterns, and identifies potential issues early.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Risk Management</h3>
+                    <p>Predictive models identify potential risks like drought, disease, or pest infestations before they impact your crops.</p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <div class="cta-card">
+                    <h3>Ready to Transform Your Farming?</h3>
+                    <p>Join The New Revoulation With Us For Increase Your Crop Predictions.</p>
+                    <div class="cta-buttons">
+                        <div class="cta-buttons">
+    <a href="signup.html" class="btn btn-light">Register Here</a>
+    <a href="dashboard.html" class="btn btn-outline-light">Schedule Demo</a>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
