@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Yield Prediction</title>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOdk-6JQxr7QNrvoSBfrJ-K91bJ929UUDjlw&s') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    .overlay {
+  background: rgba(255, 255, 255, 0.4); /* halka transparent */
+  backdrop-filter: blur(6px);            /* blur effect */
+  min-height: 100vh;
+  padding: 30px;
+}
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto 30px auto;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #2e7d32;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .chart-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .chart-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>🌱 AI-Powered Crop Yield Prediction</h1>
+
+    <!-- Input Form -->
+    <div class="form-container">
+      <label for="crop">Select Crop:</label>
+      <select id="crop">
+        <option value="Wheat">Wheat</option>
+        <option value="Rice">Rice</option>
+        <option value="Maize">Maize</option>
+        <option value="Pulses">Pulses</option>
+      </select>
+
+      <label for="rainfall">Rainfall (mm):</label>
+      <input type="number" id="rainfall" placeholder="e.g. 120">
+
+      <label for="fertilizer">Fertilizer (kg/ha):</label>
+      <input type="number" id="fertilizer" placeholder="e.g. 50">
+
+      <label for="irrigation">Irrigation (litres):</label>
+      <input type="number" id="irrigation" placeholder="e.g. 2000">
+
+      <button onclick="predictYield()">Predict Yield</button>
+    </div>
+
+    <!-- Charts -->
+    <div class="chart-container">
+      <div class="chart-box">
+        <h3>Crop Distribution</h3>
+        <canvas id="cropChart"></canvas>
+      </div>
+
+      <div class="chart-box">
+        <h3>Yield Prediction</h3>
+        <canvas id="yieldChart"></canvas>
+      </div>
+    </div>
+
+    <footer>
+      🚜 Smart Farming Dashboard | Powered by AI !!
+    </footer>
+  </div>
+
+  <script>
+    // Initial Charts
+    const ctx1 = document.getElementById('cropChart').getContext('2d');
+    const cropChart = new Chart(ctx1, {
+      type: 'pie',
+      data: {
+        labels: ['Wheat', 'Rice', 'Maize', 'Pulses'],
+        datasets: [{
+          data: [25, 25, 25, 25],
+          backgroundColor: ['#66bb6a','#42a5f5','#ffca28','#ab47bc']
+        }]
+      }
+    });
+
+    const ctx2 = document.getElementById('yieldChart').getContext('2d');
+    const yieldChart = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Prediction'],
+        datasets: [{
+          label: 'Yield (kg/ha)',
+          data: [0],
+          backgroundColor: '#42a5f5'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    // Prediction Logic
+    function predictYield() {
+      const crop = document.getElementById('crop').value;
+      const rainfall = Number(document.getElementById('rainfall').value);
+      const fertilizer = Number(document.getElementById('fertilizer').value);
+      const irrigation = Number(document.getElementById('irrigation').value);
+
+      // Simple formula for demo
+      let baseYield = {
+        Wheat: 6000,
+        Rice: 7000,
+        Maize: 5000,
+        Pulses: 4000
+      }[crop];
+
+      let predictedYield = baseYield + (rainfall * 2) + (fertilizer * 10) + (irrigation * 0.5);
+
+      // Update charts
+      cropChart.data.datasets[0].data = cropChart.data.labels.map(c => (c === crop ? 50 : 15));
+      cropChart.update();
+
+      yieldChart.data.datasets[0].data = [predictedYield];
+      yieldChart.update();
+    }
+  </script>
+</body>
+</html>
