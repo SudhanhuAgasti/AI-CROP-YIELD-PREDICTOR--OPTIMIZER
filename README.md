@@ -1,6 +1,7 @@
-# AI-CROP-YIELD-PREDICTOR--OPTIMIZER !
+8# AI-CROP-YIELD-PREDICTOR--OPTIMIZER !
 PREDICT THE WHOLE VALUE BY AI AUTHENTICATION 
 This is the must addicted  yield optimizer prediction 
 so it is used in hacakthon
 they should propagated the ai field
 they are manually shiled the value
+they are the must use ful things and return the value
